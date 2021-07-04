@@ -1,0 +1,23 @@
+{
+  "name": "complete-nodejs-course-udemy",
+  "version": "1.0.0",
+  "description": "nodejs course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaureanoVera/complete-nodejs-course-udemy.git"
+  },
+  "author": "Laureano Vera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaureanoVera/complete-nodejs-course-udemy/issues"
+  },
+  "homepage": "https://github.com/LaureanoVera/complete-nodejs-course-udemy#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
