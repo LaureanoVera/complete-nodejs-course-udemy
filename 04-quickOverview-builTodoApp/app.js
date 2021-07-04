@@ -3,11 +3,15 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("<p>Home Page</p>");
+  res.sendFile('./views/index.html', {root: __dirname})
 });
 
 app.get('/add-item', (req, res) => {
-  res.send("<p>Add Items</p>");
+  res.sendFile('./views/add-item.html', {root: __dirname})
+})
+
+app.use((req, res) => {
+  res.sendFile('./views/error.html', {root: __dirname})
 })
 
 app.listen(port, () => {

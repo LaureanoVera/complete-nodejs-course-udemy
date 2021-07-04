@@ -4,8 +4,8 @@
   "description": "nodejs course",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node 04-quickOverview-builTodoApp/app.js",
+    "dev": "nodemon 04-quickOverview-builTodoApp/app.js"
   },
   "repository": {
     "type": "git",
