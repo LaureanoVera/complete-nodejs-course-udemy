@@ -4,7 +4,12 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-  res.render('index');
+  const items = [
+    {name: 'phone', price: 1000},
+    {name: 'book', price: 30},
+    {name: 'computer', price: 2000}
+  ]
+  res.render('index', { items });
 });
 
 app.get('/add-item', (req, res) => {
