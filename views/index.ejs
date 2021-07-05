@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- HEAD -->
-  <%- include('./partials/head.ejs') %> 
+  <%- include('./partials/head.ejs') %>
 
   <body>
     <!-- NAV -->
-    <%- include('./partials/nav.ejs') %> 
+    <%- include('./partials/nav.ejs') %>
     <!-- /NAV -->
     <div class="container">
       <ul class="collection with-header">
-        <% if (items.length > 0) { %>
-          <% items.forEach(item => { %>
-            <li class="collection-item">
-              <div><%= item.name %><%= item.price %><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
-            </li>
-          <% }) %>
-        <% } else { %>
+        <% if (items.length > 0) { %> <% items.forEach(item => { %>
+        <li class="collection-item">
+          <div>
+            <a href="/items/<%= item.id %>"><%= item.name %> <%= item.price
+              %></a><a href="#!" class="secondary-content"
+              ><i class="material-icons">send</i></a
+            >
+          </div>
+        </li>
+        <% }) %> <% } else { %>
         <li>There are no items</li>
         <% } %>
       </ul>
