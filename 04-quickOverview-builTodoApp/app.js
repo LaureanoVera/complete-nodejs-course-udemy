@@ -65,6 +65,13 @@ app.delete('/items/:id', (req, res) => {
   })
 })
 
+app.put('/items/:id', (req, res) => {
+  const id = req.params.id;
+  Item.findByIdAndUpdate(id, req.body).then(result => {
+    res.json({msg: 'Update Succefully'})
+  })
+})
+
 app.use((req, res) => {
   res.render("error");
 });
