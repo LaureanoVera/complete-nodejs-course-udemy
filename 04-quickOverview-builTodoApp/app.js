@@ -58,6 +58,13 @@ app.get('/items/:id', (req, res) => {
   })
 })
 
+app.del('/items/:id', (req, res) => {
+  const id = req.params.id;
+  Item.findByIdAndDelete(id).then(result => {
+    res.redirect('/get-items')
+  })
+})
+
 app.use((req, res) => {
   res.render("error");
 });
