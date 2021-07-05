@@ -22,29 +22,15 @@ mongoose
 // template engine
 app.set("view engine", "ejs");
 
-app.get("/create-item", (req, res) => {
-  const item = new Item({
-    name: "computer",
-    price: 2000,
-  });
-  item.save().then((result) => res.send(result));
+app.get("/", (req, res) => {
+  
 });
 
 app.get("/get-items", (req, res) => {
-  Item.find().then((result) => res.send(result)).catch(err => {console.log(err)})
-});
-
-app.get("/get-item", (req, res) => {
-  Item.findById().then((result) => res.send(result)).catch(err => {console.log(err)})
-});
-
-app.get("/", (req, res) => {
-  const items = [
-    { name: "phone", price: 1000 },
-    { name: "book", price: 30 },
-    { name: "computer", price: 2000 },
-  ];
-  res.render("index", { items });
+  Item.find().then((result) => {
+    res.send(result)
+    res.render('index', { items: result })
+  }).catch(err => {console.log(err)})
 });
 
 app.get("/add-item", (req, res) => {
