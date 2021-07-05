@@ -1,7 +1,12 @@
 const express = require("express");
 const app = express();
+const user = 'user_items';
+const pass = 'k0iiw52UQWbM5wRF';
+const dbname = 'item-database';
+const mongodb = `mongodb+srv://${user}:${pass}@cluster0.tc0dq.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 const port = 3000;
 app.set('view engine', 'ejs');
+
 
 app.get("/", (req, res) => {
   const items = [
