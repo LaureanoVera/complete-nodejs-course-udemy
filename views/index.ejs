@@ -12,9 +12,11 @@
         <% if (items.length > 0) { %> <% items.forEach(item => { %>
         <li class="collection-item">
           <div>
-            <a href="/items/<%= item.id %>"><%= item.name %> $<%= item.price
-              %></a><a href="#!" class="secondary-content"
-              ><i class="material-icons">send</i></a
+            <a href="/items/<%= item.id %>"
+              ><%= item.name %> $<%= item.price %></a
+            ><a href="#!" class="secondary-content"
+              ><i class="material-icons">delete</i>
+              <i class="material-icons modal-trigger" href="#editItemModal">edit</i></a
             >
           </div>
         </li>
@@ -23,5 +25,24 @@
         <% } %>
       </ul>
     </div>
+    <!-- Modal Structure -->
+    <div id="editItemModal" class="modal">
+      <div class="modal-content">
+        <h4>Edit Form</h4>
+        <form action="" id="edit_form">
+          <input type="text" name="name" placeholder="Item name">
+          <input type="number" name="price" placeholder="Item price">
+          <button class="btn">update</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".modal");
+        var instances = M.Modal.init(elems);
+      });
+    </script>
   </body>
 </html>
