@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Item = require("../models/items");
+const Item = require("./04-quickOverview-builTodoApp/models/items");
 const app = express();
 const port = 3000;
 
